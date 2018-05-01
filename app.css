@@ -1,0 +1,139 @@
+.game-name {
+    position: fixed;
+    left: 47%;
+    font-size: 35px;
+    top: 20px;
+    border-bottom: 2px solid;
+    border-color: red;
+    color: red;
+}
+
+.game-div {
+    position: fixed;
+    top: 90px;
+    left: 40%;
+}
+
+.freeze {
+    pointer-events: none;
+}
+
+.game-table {
+    text-align: center;
+    width: 400px;
+    height: 400px;
+}
+
+.game-table td {
+    border: 1px solid;
+    width: 25%;
+    height: 25%;
+}
+
+.game-table td button {
+    width: 100%;
+    height: 100%;
+}
+
+.disable {
+    pointer-events: none;
+}
+
+.disable button, .disable button span {
+    background: gray !important;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}
+
+.pink {
+    background-color: pink;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.brown {
+    background-color: brown;
+}
+
+.skyblue {
+    background-color: skyblue;
+}
+
+.start-btn {
+    width: 120px;
+    height: 39px;
+    border-radius: 7%;
+    position: fixed;
+    left: 150;
+    top: 100;
+    background: chartreuse;
+    cursor: pointer;
+}
+
+.reset-btn {
+    top: 160;
+    background: coral;
+}
+
+.timer {
+    width: 300px;
+    top: 230;
+    background: none;
+}
+
+.score {
+    top: 260;
+}
+
+.dialog-modal {
+    width:  450px;
+    height:  150px;
+    background: white;
+    left: 30%;
+    position:  fixed;
+    top: 20%;
+    box-shadow: 3px 5px 8px 6px rgba(36,48,65,.2);
+    border-radius:  10px;
+}
+
+.congrats {
+    position:  fixed;
+    top: 23%;
+    left: 40%;
+    font-size: 23px;
+}
+
+.total-score {
+    position:  fixed;
+    top: 28%;
+    left: 40%;
+}
+
+.ok-div {
+    position:  fixed;
+    top: 35%;
+    left: 43%;
+}
+
+.ok-div button {
+    width:  75px;
+    height:  27px;
+    border-radius:  4px;
+    cursor:  pointer;
+}

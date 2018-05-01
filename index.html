@@ -1,0 +1,67 @@
+    <html>
+        <head>
+            <link rel="stylesheet" type="text/css" href="app.css" />
+        </head>
+
+        <body ng-app="coviams">
+            <div ng-controller="coviamsController">
+                <div class="game-name">
+                    <spa>Match the Tiles..</spa>
+                </div>
+                <div class="game-div" ng-class="{freeze: !gameStarted}">
+                    <table class="game-table">
+                        <tr ng-repeat="row in matrix track by $index">
+                            <td ng-repeat="cell in row track by $index" ng-class="{disable: disableMatchedTiles($parent.$index, $index)}" ng-click="disableClick || tileClick($parent.$index, $index)">
+                                <button ng-class="{
+                                            red: ((cell === 1 || cell === 9) && tileStatus[$parent.$index][$index]),
+                                            blue: ((cell === 2 || cell === 10) && tileStatus[$parent.$index][$index]),
+                                            green: ((cell === 3 || cell === 11) && tileStatus[$parent.$index][$index]),
+                                            pink: ((cell === 4 || cell === 12) && tileStatus[$parent.$index][$index]),
+                                            orange: ((cell === 5 || cell === 13) && tileStatus[$parent.$index][$index]),
+                                            yellow: ((cell === 6 || cell === 14) && tileStatus[$parent.$index][$index]),
+                                            brown: ((cell === 7 || cell === 15) && tileStatus[$parent.$index][$index]),
+                                            skyblue: ((cell === 8 || cell === 16) && tileStatus[$parent.$index][$index]),
+                                        }">
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <button class="start-btn" ng-class="{disable: gameStarted}" ng-click="startGame()">Start Game!!!</button>
+                </div>
+                <div>
+                    <button class="start-btn reset-btn" ng-class="{disable: showDialog}" ng-click="resetGame()">Reset Game!!!</button>
+                </div>
+                <div class="start-btn timer">
+                    <label>Time elapsed: </label>
+                    <label ng-show="gameStarted">{{minutes}}::{{seconds}}</label>
+                </div>
+                <div class="start-btn timer score">
+                    <label>Score: </label>
+                    <label>{{score}}</label>
+                </div>
+
+                <div ng-if="showDialog" class="dialog-modal">
+                    <span class="congrats">
+                        Congratulations!!
+                    </span>
+                    <span class="total-score">
+                        Your Total Score is {{score}}.
+                    </span>
+
+                    <div class="ok-div">
+                        <button ng-click="closeDialog()">
+                                OK!
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            
+
+            <script src="angular.min.js"></script>
+            <script src="app.js"></script>
+        </body>
+    </html>
